@@ -438,35 +438,37 @@ nav {
   color: var(--text-light);
 }
 
-.blog__grid {
-  margin-top: 4rem;
-  display: grid;
-  gap: 2rem 1rem;
-}
+@media (min-width: 768px) {
+  .blog__grid {
+    margin-top: 4rem;
+    display: grid;
+    gap: 2rem 1rem;
+  }
 
-.blog__card img {
-  margin-bottom: 1rem;
-  border-radius: 5px;
-}
+  .blog__card img {
+    margin-bottom: 1rem;
+    border-radius: 5px;
+  }
 
-.blog__card p {
-  margin-bottom: 5px;
-  color: var(--primary-color-dark);
-}
+  .blog__card p {
+    margin-bottom: 5px;
+    color: var(--primary-color-dark);
+  }
 
-.blog__card h4 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
+  .blog__card h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
 
-.blog__card a {
-  color: var(--text-light);
-  transition: 0.3s;
-}
+  .blog__card a {
+    color: var(--text-light);
+    transition: 0.3s;
+  }
 
-.blog__card a:hover {
-  color: var(--primary-color-dark);
+  .blog__card a:hover {
+    color: var(--primary-color-dark);
+  }
 }
 
 .contact__form {

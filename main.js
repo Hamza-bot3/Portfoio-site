@@ -1,29 +1,20 @@
 const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
-const menuBtnIcon = menuBtn.querySelector("i");
+const menuBtnIcon = document.querySelector("i");
 
-menuBtn.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
 
-  const isOpen = navLinks.classList.contains("open");
+menuBtn.addEventListener("click", function() {
+  if (navLinks.style.maxHeight) {
+    navLinks.style.maxHeight = null;
+  } else {
+    navLinks.style.maxHeight = navLinks.scrollHeight + "px";
+  }
+
+  const isOpen = navLinks.style.maxHeight !== null;
   menuBtnIcon.setAttribute(
     "class",
     isOpen ? "ri-close-line" : "ri-menu-3-line"
   );
-});
-
-navLinks.addEventListener("click", (e) => {
-  navLinks.classList.remove("open");
-  menuBtnIcon.setAttribute("class", "ri-menu-3-line");
-});
-
-const mixer = mixitup(".project__grid");
-
-const swiper = new Swiper(".swiper", {
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-  },
 });
 
 const scrollRevealOption = {
@@ -66,7 +57,30 @@ ScrollReveal().reveal(".hire__me__btn", {
 
 
   // about container
-  ScrollReveal(}).reveal(".about__image img", {
+  ScrollReveal(// Prepare email content
+const mailOptions = {
+  from: 'your-valid-email@gmail.com', // Replace with a valid email address
+  to: 'hamzatalha1213@gmail.com', // Your main email address
+  subject: 'New Form Submission',
+  text: `
+    First Name: ${firstName}
+    Last Name: ${lastName}
+    Email: ${email}
+    Description: ${description}
+  `,
+};
+
+// Send the email
+transporter.sendMail(mailOptions, (error, info) => {
+  if (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  } else {
+    console.log('Email sent: ' + info.response);
+    res.status(200).send('OK');
+  }
+});
+}).reveal(".about__image img", {
     ...scrollRevealOption,
     origin: "left",
   });
